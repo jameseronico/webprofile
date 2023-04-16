@@ -18,16 +18,19 @@ export const Projects = () => {
       title: "HTML/CSS/Bootstrap",
       description: "Static Web Design",
       imgUrl: projImg1,
+      link: "https://jameseronico.github.io/webportfolio/",
     },
     {
       title: "Front-end design",
       description: "Developing a web from a Figma design",
       imgUrl: projImg2,
+      link: "https://jameseronico.github.io/1stproject/#",
     },
     {
       title: "Game e-Commerce site",
       description: "A sample game website",
       imgUrl: projImg3,
+      link: "https://e-commerce-mern-ebon.vercel.app/",
     },
   ];
 
@@ -42,6 +45,7 @@ export const Projects = () => {
       title: "Backend",
       description: "Certificate of Completion",
       imgUrl: certImg2,
+      link: "https://share.zertify.zuitt.co/certificate/e1f4c9cf-b420-47c2-b839-adfab060552b/",
     },
     {
       title: "Fullstack",
@@ -72,29 +76,32 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                                />
-                            )
-                          })
+                          projects.map((project, index) => (
+                          <ProjectCard key={index} {...project}>
+                        <a href={project.link} target="_blank" style={{ display: "block" }}>
+                          <img src={project.imgUrl} alt={project.title} />
+                          <div style={{ textAlign: "center" }}>View More</div>
+                        </a>
+                      </ProjectCard>
+                          ))
                         }
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <Row>
-                        {certificates.map((certificate, index) => (
-                          <ProjectCard key={index} {...certificate}>
-                            <a href={certificates.link} target="_blank">
-                              <img src={certificates.imgUrl} alt={certificates.title} />
-                            </a>
-                          </ProjectCard>
-                        ))}
-                      </Row>
+  <Row>
+    {certificates.map((certificate, indexs) => (
+      <ProjectCard key={indexs} {...certificate}>
+        <a href={certificate.link} target="_blank" style={{ display: "block" }}>
+          <img src={certificate.imgUrl} alt={certificate.title} />
+          <div style={{ textAlign: "center" }}>View More</div>
+        </a>
+      </ProjectCard>
+    ))}
+  </Row>
+</Tab.Pane>
 
-                    </Tab.Pane>
+
+
                   </Tab.Content>
                 </Tab.Container>
               </div>}

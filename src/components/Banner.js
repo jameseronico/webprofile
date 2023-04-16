@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.png";
+import resume from "../assets/img/jamesresume.pdf";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -64,7 +65,8 @@ export const Banner = () => {
                     </span>
                   </div>
                 </div>
-                <button onClick={() => console.log('connect')}>View my CV <ArrowRightCircle size={25} /></button>
+              
+                <a href={resume} download={resume} >View my CV <ArrowRightCircle size={25} /></a>
               </div>}
             </TrackVisibility>
           </Col>
